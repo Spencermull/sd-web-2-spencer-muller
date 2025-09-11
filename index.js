@@ -60,4 +60,28 @@ renderArray(users); //Test array case
 
 // 5. Add error handling to your functions that will log an error message using console.error() if any object doesn't have a "name" property. Display any error messages in the div with id "error-messages"
 
+    function nameErrorHelper(obj, htmlId){ //Originally I had duplicate functions but then i realized that a helper function would easier for name checking
+      if(!("name" in obj)){
+        const errorElement = document.createElement("li");
+        const errorMsg = ("Attribute name not found at index ", obj);
+        console.error(errorMsg);
+        errorElement.textContent = errorMsg;
+        document.getElementById(htmlId).append(errorElement);
+        return true;
+      }
+      return false;
+    }
 // 6. Test your error handling by creating a second array that's intentionally broken (missing name properties) and passing it to your functions. Verify that your error handling works correctly and displays errors in the div with id "broken-array-errors"
+    
+    const invalidUsers = [
+    { id: 1, age: 23 },
+    { id: 2, name: "Darth Vader", age: 45 },
+    { id: 3,  age: 23 },
+    { id: 4,  age: 57 },
+    { id: 5,  age: 900 },
+    { id: 6,  age: 32 },
+    { id: 7,  age: 234 },
+    { id: 8, age: 33 },
+    { id: 9,  age: 112 },
+    { id: 10,  age: 27 },
+    ];
