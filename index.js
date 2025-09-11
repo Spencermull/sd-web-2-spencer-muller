@@ -25,6 +25,14 @@ const users = [
     });
 
 // 2. Print out the names of characters whose age is less than 40 in the console, then render them in the HTML list with id "young-characters-list"
+    users.forEach((item) =>{
+      if (item.age < 40){
+       console.log(`${item.name}`);
+       const listElement = document.createElement("li");
+       listElement.textContent = item.name;
+       document.getElementById("young-characters-list").append(listElement);
+      }
+    });
 
 // 3. Create a reusable function that takes any array and uses logic to render a list of character names in the HTML. Use this function to populate the list with id "function-list"
 
