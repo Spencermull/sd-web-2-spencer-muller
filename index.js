@@ -19,8 +19,8 @@ const users = [
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
     users.forEach((item) => {
       console.log(`${item.name}`)
-      var listElement = document.createElement("li");
-      listElement = item.name;
+      const listElement = document.createElement("li");
+      listElement.textContent = item.name;
       document.getElementById("names-list").append(listElement);
     });
 
