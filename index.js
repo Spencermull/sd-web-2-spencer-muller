@@ -17,6 +17,12 @@ const users = [
 // broken test data for exercise 6
 
 // 1. Print out the names of each character in the console, then render them in the HTML list with id "names-list"
+    users.forEach((item) => {
+      console.log(`${item.name}`)
+      var listElement = document.createElement("li");
+      listElement = item.name;
+      document.getElementById("names-list").append(listElement);
+    });
 
 // 2. Print out the names of characters whose age is less than 40 in the console, then render them in the HTML list with id "young-characters-list"
 
